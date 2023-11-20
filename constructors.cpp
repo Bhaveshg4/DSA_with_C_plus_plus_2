@@ -23,6 +23,10 @@ class student{
         age = a.age;
         gender = a.gender;
     }
+    ~student(){
+        cout<<"Destructor called";
+        //the destructor function is called when we get out of the main function
+    }
 
     void setName(string s){
         name = s;
@@ -47,6 +51,15 @@ int main(){
     //supppose we have to coppy all the values of student a into student c
     //for this we need a special type of constructor that is a coppy constructor
     student c =a;  //coppy constructor
+
+
+
+    // if(c == a ){
+    //     cout<<"Same"<<endl;
+    // }
+    // else{
+    //     printf("Not same");
+    // }
 
     return 0;
 }
