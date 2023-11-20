@@ -11,11 +11,19 @@ class student{
         cout<<"Default constructors"<<endl;
     }
     student(string s, int a, int g){
+        cout<<"Parametarised  constructors"<<endl;
         name=s;
         age=a;
-        gender=g;
+        gender=g; //parametarised constructors
     }
-    //parametarised constructors
+    student(student &a){
+        // default constructors always performs shallow coppy
+        // coppy constructors
+        name = a.name;
+        age = a.age;
+        gender = a.gender;
+    }
+
     void setName(string s){
         name = s;
     }
@@ -34,6 +42,11 @@ class student{
 int main(){
     student a("Urvi",20,1);
     a.printInfo();
+    student b;
+    student c;
+    //supppose we have to coppy all the values of student a into student c
+    //for this we need a special type of constructor that is a coppy constructor
+    student c =a;  //coppy constructor
 
     return 0;
 }
